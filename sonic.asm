@@ -2205,8 +2205,8 @@ Tit_CountC:
 		addq.w	#1,(v_title_ccount).w ; increment C counter
 
 loc_3230:
-		;tst.w	(v_demolength).w  ; DISABLE DEMO MODE
-		;beq.w	GotoDemo
+		tst.w	(v_demolength).w  ; DISABLE DEMO MODE And Loop Menu
+		beq.w	GM_Title
 		andi.b	#btnStart,(v_jpadpress1).w ; check if Start is pressed
 		beq.w	Tit_MainLoop	; if not, branch
 
